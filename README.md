@@ -1,5 +1,5 @@
 # Python-Django-Ecommerce-Amazon-Clone
- Super Coders tutorial new episode following on developing amazon backend with django
+ Developing amazon with django from scratch for kenya Digital market
 
 Download the DBeaver from https://dbeaver.io/download/ and create the ER
 
