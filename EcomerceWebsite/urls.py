@@ -8,11 +8,14 @@ from django.conf import settings
 
 urlpatterns = [
     path('adminmain/', admin.site.urls),
-    path('admin/', views.adminLogin, name="admin-page"),
+    path('admin/', views.adminLogin, name="admin-login-page"),
     path('', views.demoPage, name="demo-page"),
     
     #Admin Views
-    path('admin_home/', AdminView.admin_home, name="admin-home-page")
+    path('admin_home/', AdminView.admin_home, name="admin-home-page"),
+    path('admin_login_proccess/', AdminView.adminLoginProccess, name="admin-login-process"),
+    path('admin_logout_proccess/', AdminView.adminLogoutProccess, name="admin-logout-process")
+
 ]
 
 #static and media root configurations
