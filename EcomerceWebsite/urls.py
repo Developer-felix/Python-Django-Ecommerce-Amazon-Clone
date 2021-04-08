@@ -14,7 +14,10 @@ urlpatterns = [
     #Admin Views
     path('admin_home/', AdminView.admin_home, name="admin-home-page"),
     path('admin_login_proccess/', AdminView.adminLoginProccess, name="admin-login-process"),
-    path('admin_logout_proccess/', AdminView.adminLogoutProccess, name="admin-logout-process")
+    path('admin_logout_proccess/', AdminView.adminLogoutProccess, name="admin-logout-process"),
+
+    path('category_list/', AdminView.CategoriesListView.as_view(), name="category-list-page"),
+    path('category_create/', AdminView.CategoriesCreateView.as_view(), name="category-create-page"),
 
 ]
 
