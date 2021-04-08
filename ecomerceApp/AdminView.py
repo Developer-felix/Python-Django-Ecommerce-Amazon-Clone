@@ -6,14 +6,15 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .models import Categories
 from django.views.generic import CreateView, DeleteView, ListView, DetailView, UpdateView
-
+from django.contrib.messages.views import SuccessMessageMixin
 
 class CategoriesListView(ListView):
     model = Categories
     template_name = "admin_templates/category_list.html"
 
-class CategoriesCreateView(CreateView):
+class CategoriesCreateView(SuccessMessageMixin,CreateView):
     model = Categories
+    success_message = "Category Added"
     fields = "__all__"
     template_name = "admin_templates/category_create.html"
 

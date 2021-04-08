@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django.urls import reverse
 
 # Create your models here.
 class CustomUser(AbstractUser):
@@ -41,7 +42,13 @@ class Categories(models.Model):
     thumbnail=models.FileField()
     description=models.TextField()
     created_at=models.DateTimeField(auto_now_add=True)
-    is_active=models.IntegerField(default=1)
+    is_active = models.IntegerField(default=1)
+    
+    def get_absolute_url(self):
+        return reverse("category-list-page")
+
+    def __str__(self):
+        return self.title
 
 
 class SubCategories(models.Model):
