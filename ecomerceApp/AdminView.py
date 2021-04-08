@@ -4,6 +4,12 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from .models import Categories
+from django.views.generic import CreateView, DeleteView, ListView, DetailView, UpdateView
+
+class CategoriesListView(ListView):
+    model = Categories
+    template_name = "admin_templates/category_list.html"
 
 @login_required(login_url="/admin/")
 def admin_home(request):
