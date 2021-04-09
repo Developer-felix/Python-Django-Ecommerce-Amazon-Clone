@@ -17,3 +17,7 @@ Download the DBeaver from https://dbeaver.io/download/ and create the ER
 ## Added Admin Signin Page
 
 <img src="screenshots/admin_signin.PNG" style="width:100%" alt="Er Diagram"/>
+
+## Added Category List Page
+
+<img src="screenshots/category_list.PNG" style="width:100%" alt="Er Diagram"/>
