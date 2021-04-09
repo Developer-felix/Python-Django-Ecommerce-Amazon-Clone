@@ -2,49 +2,30 @@
 <div class="main-sidebar sidebar-style-2">
   <aside id="sidebar-wrapper">
     <div class="sidebar-brand">
-      <a href="index.html"><img src="{% static '/img/logo.png' %}" style="height: 105px;" alt=""></a>
+      <a href="index.html"
+        ><img src="{% static '/img/logo.png' %}" style="height: 105px" alt=""
+      /></a>
     </div>
     <div class="sidebar-brand sidebar-brand-sm">
       <a href="/">KDM</a>
     </div>
     <ul class="sidebar-menu">
+   {% url 'category-list-page' as category-list-page %}
+   {% url 'category-create-page' as category-create-page %}
       <li class="menu-header">Dashboard</li>
-      <li class="dropdown active">
+       <li class="dropdown {% if request.path == category-list-page %} active {% endif %}{% if request.path == category-create-page %} active {% endif %}">
         <a href="#" class="nav-link has-dropdown"
-          ><i class="fas fa-fire"></i><span>Dashboard</span></a
+          ><i class="fas fa-fire"></i><span>Category</span></a
         >
         <ul class="dropdown-menu">
           <li class="active">
-            <a class="nav-link" href="index-0.html">General Dashboard</a>
+            <a class="nav-link" href="{% url "category-list-page"%}">All Categories</a>
           </li>
           <li>
-            <a class="nav-link" href="index.html">Ecommerce Dashboard</a>
+            <a class="nav-link" href="{% url "category-create-page"%}">Add Categories</a>
           </li>
         </ul>
       </li>
-      <li class="menu-header">Starter</li>
-      <li class="dropdown">
-        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"
-          ><i class="fas fa-columns"></i> <span>Layout</span></a
-        >
-        <ul class="dropdown-menu">
-          <li>
-            <a class="nav-link" href="layout-default.html">Default Layout</a>
-          </li>
-          <li>
-            <a class="nav-link" href="layout-transparent.html"
-              >Transparent Sidebar</a
-            >
-          </li>
-          <li>
-            <a class="nav-link" href="layout-top-navigation.html"
-              >Top Navigation</a
-            >
-          </li>
-        </ul>
-      </li>
-      
-     
     </ul>
 
     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
