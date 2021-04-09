@@ -17,7 +17,8 @@ urlpatterns = [
     path('admin_logout_proccess/', AdminView.adminLogoutProccess, name="admin-logout-process"),
 
     path('category_list/', AdminView.CategoriesListView.as_view(), name="category-list-page"),
-    path('category_create/', AdminView.CategoriesCreateView.as_view(), name="category-create-page"),
+    path('category_update/', AdminView.CategoriesCreateView.as_view(), name="category-create-page"),
+    path('category_update/<slug:pk>', AdminView.CategoriesUpdateView.as_view(), name="category-update-page"),
 
 ]
 

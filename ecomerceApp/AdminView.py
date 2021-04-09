@@ -18,6 +18,13 @@ class CategoriesCreateView(SuccessMessageMixin,CreateView):
     fields = "__all__"
     template_name = "admin_templates/category_create.html"
 
+class CategoriesUpdateView(SuccessMessageMixin,UpdateView):
+    model = Categories
+    success_message = "Category Updated"
+    fields = "__all__"
+    template_name = "admin_templates/category_update.html"
+    
+
 
 @login_required(login_url="/admin/")
 def admin_home(request):
