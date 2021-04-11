@@ -59,7 +59,12 @@ class SubCategories(models.Model):
     thumbnail=models.FileField()
     description=models.TextField()
     created_at=models.DateTimeField(auto_now_add=True)
-    is_active=models.IntegerField(default=1)
+    is_active = models.IntegerField(default=1)
+    def get_absolute_url(self):
+        return reverse("sub-category-list-page")
+
+    def __str__(self):
+        return self.title
 
 
 class Products(models.Model):

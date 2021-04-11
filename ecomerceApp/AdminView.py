@@ -28,19 +28,19 @@ class CategoriesUpdateView(SuccessMessageMixin,UpdateView):
 #Sub Category
 class SubCategoriesListView(ListView):
     model = SubCategories
-    template_name = "admin_templates/category_list.html"
+    template_name = "admin_templates/sub_category_list.html"
 
 class SubCategoriesCreateView(SuccessMessageMixin,CreateView):
     model = SubCategories
-    success_message = "Category Added"
+    success_message = "Sub Category Added"
     fields = "__all__"
-    template_name = "admin_templates/category_create.html"
+    template_name = "admin_templates/sub_category_create.html"
 
 class SubCategoriesUpdateView(SuccessMessageMixin,UpdateView):
     model = SubCategories
-    success_message = "Category Updated"
+    success_message = "Sub Category Updated"
     fields = "__all__"
-    template_name = "admin_templates/category_update.html"
+    template_name = "admin_templates/sub_category_update.html"
 
 
 @login_required(login_url="/admin/")

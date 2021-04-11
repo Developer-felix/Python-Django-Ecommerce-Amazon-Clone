@@ -22,6 +22,19 @@
             <li class='{% if request.path == "category-create-page" %}active{% endif %}'><a class="nav-link" href="{% url 'category-create-page' %}">Add Categories</a></li>
           </ul>
         </li>
+
+
+        {% comment %} SUB CATEGORY MENU {% endcomment %}
+        {% url 'sub-category-list-page' as sub-category-list-page %}
+        {% url 'sub-category-create-page' as sub-category-create-page %}
+        {% url 'sub-category-create-page' id as sub-category-create-page %}
+        <li class="dropdown {% if request.path == 'sub-category-list-page' %} active {% endif %}{% if request.path == 'sub-category-create-page' %} active {% endif %}{% if request.path == 'sub-category-create-page' %} active {% endif %}">
+          <a href="#" class="nav-link has-dropdown"><i class="fas fa-dice-d6"></i><span>Sub Category</span></a>
+          <ul class="dropdown-menu">
+            <li class='{% if request.path == "sub-category-list-page" %} active {% endif %}{% if request.path == "sub-category-create-page" %} active {% endif %}'><a class="nav-link" href="{% url 'sub-category-list-page' %}">All Sub Categories</a></li>
+            <li class='{% if request.path == "sub-category-create-page" %} active {% endif %}'><a class="nav-link" href="{% url 'sub-category-create-page' %}">Add Sub Categories</a></li>
+          </ul>
+        </li>
     </ul>
 
     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
