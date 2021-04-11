@@ -57,7 +57,7 @@
         <div class="navbar-bg"></div>
 
         {% include 'admin_templates/navbar.html' %} 
-        {% include 'admin_templates/sidebar.html' %}
+        {% include 'admin_templates/sidebar.html' with id=form.instance.id %}
 
         <!-- Main Content -->
         <div class="main-content">
