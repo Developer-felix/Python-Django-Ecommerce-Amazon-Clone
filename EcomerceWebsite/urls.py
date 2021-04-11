@@ -15,10 +15,14 @@ urlpatterns = [
     path('admin_home/', AdminView.admin_home, name="admin-home-page"),
     path('admin_login_proccess/', AdminView.adminLoginProccess, name="admin-login-process"),
     path('admin_logout_proccess/', AdminView.adminLogoutProccess, name="admin-logout-process"),
-
+    #  Category
     path('category_list/', AdminView.CategoriesListView.as_view(), name="category-list-page"),
-    path('category_update/', AdminView.CategoriesCreateView.as_view(), name="category-create-page"),
+    path('category_create/', AdminView.CategoriesCreateView.as_view(), name="category-create-page"),
     path('category_update/<slug:pk>', AdminView.CategoriesUpdateView.as_view(), name="category-update-page"),
+    #Sub  Category
+    path('sub_category_list/', AdminView.SubCategoriesListView.as_view(), name="sub-category-list-page"),
+    path('sub_category_create/', AdminView.SubCategoriesCreateView.as_view(), name="sub-category-create-page"),
+    path('sub_category_update/<slug:pk>', AdminView.SubCategoriesUpdateView.as_view(), name="sub-category-update-page"),
 
 ]
 

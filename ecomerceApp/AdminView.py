@@ -4,10 +4,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from .models import Categories
+from .models import Categories, SubCategories
 from django.views.generic import CreateView, DeleteView, ListView, DetailView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
 
+#Category
 class CategoriesListView(ListView):
     model = Categories
     template_name = "admin_templates/category_list.html"
@@ -23,7 +24,23 @@ class CategoriesUpdateView(SuccessMessageMixin,UpdateView):
     success_message = "Category Updated"
     fields = "__all__"
     template_name = "admin_templates/category_update.html"
-    
+
+#Sub Category
+class SubCategoriesListView(ListView):
+    model = SubCategories
+    template_name = "admin_templates/category_list.html"
+
+class SubCategoriesCreateView(SuccessMessageMixin,CreateView):
+    model = SubCategories
+    success_message = "Category Added"
+    fields = "__all__"
+    template_name = "admin_templates/category_create.html"
+
+class SubCategoriesUpdateView(SuccessMessageMixin,UpdateView):
+    model = SubCategories
+    success_message = "Category Updated"
+    fields = "__all__"
+    template_name = "admin_templates/category_update.html"
 
 
 @login_required(login_url="/admin/")
